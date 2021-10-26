@@ -1,31 +1,25 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable space-infix-ops */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable keyword-spacing */
 /* eslint-disable no-trailing-spaces */
+/* eslint-disable no-shadow */
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable semi */
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Text, StyleSheet ,ActivityIndicator} from 'react-native';
 import * as firebase from 'react-native-firebase';
 import AsyncStorage from '@react-native-community/async-storage';
+import GlobalUserData from '../globalUserData'
 
 export default class LoadingScreen extends React.Component{
 
     constructor(props){
         super(props);
-        
-        const tryMe = async () => {
-            try {
-
-                const data = await AsyncStorage.getItem('user');
-                if (data !== null) {
-                    console.log(data);
-                    var value = JSON.parse(data);
-                    console.log(value._id);
-                }
-
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        tryMe();
-
 
     }
 
@@ -33,21 +27,17 @@ export default class LoadingScreen extends React.Component{
     componentDidMount(){
             
 
-        // firebase.database().ref("/users/" + firebase.auth().currentUser.uid+"/status")
-        // .onDisconnect()
-        // .set("offline");
 
          firebase.auth().onAuthStateChanged( async user => {
             var verified;
 
             if (user) {
-
-                // var userLoggedIn = firebase.auth().currentUser;
-                // verified = userLoggedIn.emailVerified;
                 
                 verified = user.emailVerified;
 
                         if (verified === true){
+                            await AsyncStorage.setItem('user', JSON.stringify({ _id: user.uid, name: user.displayName }))
+                            .catch(e=>console.log(e));
                             await AsyncStorage.setItem('user', JSON.stringify({ _id: user.uid, name: user.displayName }))
                             .then(()=>{
                                 firebase.database().ref("/users/" +user.uid )
@@ -55,9 +45,19 @@ export default class LoadingScreen extends React.Component{
                                         status: "online"
                                     })
                                     .catch(e => console.log(e));
-                                this.props.navigation.navigate("App");
+                                   firebase.database().ref("/users/"+user.uid)
+                                   .once('value',(snap)=>{
+                                       GlobalUserData.id = snap.val().id;
+                                       GlobalUserData.fullName = snap.val().fullName;
+                                       GlobalUserData.profileImage = snap.val().profileImage != null ? snap.val().profileImage : null
+                                   }).then(()=>{
+                                       this.props.navigation.navigate("App");
+
+                                   })
+                                   .catch(e=>console.log(e));
 
                             })
+                            .catch(e=>console.log(e))
                         }
                     
 

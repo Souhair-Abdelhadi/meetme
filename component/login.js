@@ -1,4 +1,14 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable space-infix-ops */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable keyword-spacing */
 /* eslint-disable no-trailing-spaces */
+/* eslint-disable no-shadow */
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable semi */
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableOpacity,
@@ -7,7 +17,6 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import  * as firebase from 'react-native-firebase';
 
-import {Actions} from 'react-native-router-flux';
 import AsyncStorage from '@react-native-community/async-storage';
 
 
@@ -20,9 +29,6 @@ import AsyncStorage from '@react-native-community/async-storage';
             modal : false ,
             resetPassword :"",
             resetPasswordError : "",
-        }
-        Redirect(){
-            Actions.home();
         }
 
 
@@ -122,11 +128,6 @@ import AsyncStorage from '@react-native-community/async-storage';
       
     
  
-        signup(){
-            Actions.registartion();
-        }  
-
-
         _storeData = async (_id,name) => {
 
             try {
@@ -154,6 +155,15 @@ import AsyncStorage from '@react-native-community/async-storage';
 
         // }
        
+
+        componentWillUnmount() {
+
+
+            // fix Warning: Can't perform a React state update on an unmounted component
+            this.setState = (state, callback) => {
+                return;
+            };
+        }
 
         render()
         {
@@ -203,6 +213,7 @@ import AsyncStorage from '@react-native-community/async-storage';
                     <TextInput placeholder='Enter your email' placeholderTextColor='#05036D' keyboardType={'email-address'}
                                 style={styles.input} onChangeText={resetPassword => this.setState({ resetPassword })}
                                 value={this.state.resetPassword}
+                                autoCapitalize={'none'}
 
                                  /> 
                 </View>
@@ -240,6 +251,7 @@ import AsyncStorage from '@react-native-community/async-storage';
                     <TextInput placeholder='Enter your email' placeholderTextColor='#05036D'  keyboardType={'email-address'}
                                 style={styles.input} onChangeText={email => this.setState({ email })}
                                 value={this.state.email}
+                                autoCapitalize={'none'}
                                  /> 
                 </View>
     
@@ -279,7 +291,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
                     <Text style={{fontSize:16,fontWeight:"bold",color: 'white'}} > You don't have an account ?  </Text>
 
-                        <TouchableOpacity   onPress={this.signup}>
+                        <TouchableOpacity   onPress={()=> this.props.navigation.navigate("Register")}>
                                 <Text style={styles.signUp}>Sign up</Text>
                         </TouchableOpacity>
 

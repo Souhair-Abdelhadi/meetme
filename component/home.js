@@ -7,7 +7,7 @@ import  * as firebase from 'react-native-firebase';
 // @refresh reset
 
 import React  from 'react';
-import { StyleSheet, View, FlatList, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, FlatList, Text} from 'react-native';
 import Card from '../card';
 import AsyncStorage from '@react-native-community/async-storage';
 //   const db = firebase.database();

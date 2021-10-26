@@ -6,11 +6,10 @@ import  * as firebase from 'react-native-firebase';
 
 // @refresh reset
 
-import React ,{useState,useEffect} from 'react';
-import {StyleSheet,View,FlatList,Text,TouchableOpacity} from 'react-native';
+import React from 'react';
+import {StyleSheet,View,FlatList,Text} from 'react-native';
 import Card from '../card';
 import AsyncStorage from '@react-native-community/async-storage';
-import SoundPlayer from 'react-native-sound-player'
 
 //   const db = firebase.database();
 

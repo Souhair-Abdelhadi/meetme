@@ -7,6 +7,10 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.github.wuxudong.rncharts.MPAndroidChartPackage;
+import com.horcrux.svg.SvgPackage;
+import com.taluttasgiran.rnsecurestorage.RNSecureStoragePackage;
+import com.swmansion.rnscreens.RNScreensPackage;
 import com.reactnativecommunity.picker.RNCPickerPackage;
 import com.reactnativecommunity.slider.ReactSliderPackage;
 import com.filepicker.FilePickerPackage;
@@ -16,11 +20,9 @@ import com.brentvatne.react.ReactVideoPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.rnim.rn.audio.ReactNativeAudioPackage;
-import io.agora.rtc.react.RCTAgoraRtcPackage;
 import com.github.douglasjunior.reactNativeGetLocation.ReactNativeGetLocationPackage;
 import com.johnsonsu.rnsoundplayer.RNSoundPlayerPackage;
 import io.invertase.firebase.RNFirebasePackage;
-import com.reactnativecommunity.netinfo.NetInfoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
@@ -57,6 +59,10 @@ public class MainApplication extends MultiDexApplication  implements ReactApplic
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new MPAndroidChartPackage(),
+            new SvgPackage(),
+            new RNSecureStoragePackage(),
+            new RNScreensPackage(),
             new RNCPickerPackage(),
             new ReactSliderPackage(),
             new FilePickerPackage(),
@@ -65,11 +71,9 @@ public class MainApplication extends MultiDexApplication  implements ReactApplic
             new ImagePickerPackage(),
             new RNSoundPackage(),
             new ReactNativeAudioPackage(),
-            new RCTAgoraRtcPackage(),
             new ReactNativeGetLocationPackage(),
             new RNSoundPlayerPackage(),
             new RNFirebasePackage(),
-            new NetInfoPackage(),
             new VectorIconsPackage(),
             new AsyncStoragePackage(),
             new SafeAreaContextPackage(),

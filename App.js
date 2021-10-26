@@ -1,30 +1,171 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable no-bitwise */
+/* eslint-disable no-lone-blocks */
+/* eslint-disable react/no-did-mount-set-state */
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable space-infix-ops */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable keyword-spacing */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-shadow */
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable semi */
+/* eslint-disable prettier/prettier */
 
-import LinearGradient from 'react-native-linear-gradient';
-import  * as firebase from 'react-native-firebase';
-import {Actions} from 'react-native-router-flux';
+
+// import LinearGradient from 'react-native-linear-gradient';
+// import  * as firebase from 'react-native-firebase';
+// import {Actions} from 'react-native-router-flux';
+
 import Routes from './component/routes';
 import loading from './component/loading';
+import Login from './component/login'
+import Register from './component/register'
+
 import HomeScreen from './screens/homescreen';
 import CheckConn from './screens/connectivityLost'
 import Conversation from './component/chatRoom'
 import {createSwitchNavigator,createAppContainer} from 'react-navigation';
 import {createStackNavigator } from 'react-navigation-stack';
+// import {createStackNavigator} from '@react-navigation/stack'
+
 // @refresh reset
 
-import React ,{Component,useState,useEffect,useCallback} from 'react';
-import {StyleSheet,View,Animated,TextInput,ActivityIndicator,Button,TouchableWithoutFeedback,Dimensions,Alert,PermissionsAndroid ,Keyboard,Modal,FlatList,Text,TouchableOpacity, Image} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
-import {GiftedChat} from 'react-native-gifted-chat';
-import Card from './card';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-import About from './component/aboutApp';
-import Icon from 'react-native-vector-icons/Ionicons';
-import OptionsMenu from "react-native-option-menu";
-import Test from './test'
-import NetInfo from '@react-native-community/netinfo'
-import { create } from 'react-test-renderer';
-import { ScrollView } from 'react-native-gesture-handler';
+// import React ,{Component,useState,useEffect,useCallback} from 'react';
+// import {StyleSheet,View,Animated,TextInput,ActivityIndicator,Button,TouchableWithoutFeedback,Dimensions,Alert,PermissionsAndroid ,Keyboard,Modal,FlatList,Text,TouchableOpacity, Image} from 'react-native';
+// import AsyncStorage from '@react-native-community/async-storage';
+// import {GiftedChat} from 'react-native-gifted-chat';
+// import Card from './card';
+// import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+// import About from './component/aboutApp';
+// import Icon from 'react-native-vector-icons/Ionicons';
+// import OptionsMenu from "react-native-option-menu";
+// import Test from './test'
+// import { create } from 'react-test-renderer';
+// import { ScrollView } from 'react-native-gesture-handler';
 
+
+
+//------------------------------ younness principal programme
+//import React from 'react'
+import Auth from './younness/components/Auth'
+import Registration from './younness/components/Registration'
+import Home from './younness/components/Home'
+import AboutApp from './component/aboutApp'
+import Hydration from './younness/screens/HydrationScreen';
+import ChatRoom from './younness/components/chatRoom';
+import HomeScreenV2 from './younness/screens/homescreen'
+import Loading from './younness/components/loading'
+import NutritionContent from './younness/Test/NutritionContent'
+import NutritonContentDetails  from './younness/Test/NutritionContentDetails'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+//import Icons from 'react-native-vector-icons/FontAwesome5'
+const Tab = createBottomTabNavigator();
+import Test from './younness/components/Test'
+//import {View,Text} from 'react-native'
+
+
+// const Login_Registre = createStackNavigator({
+//   Login : {
+
+//     screen : Auth,
+
+//   },
+//   Register : {
+//     screen : Registration,
+//   },
+
+// },
+
+//   {
+//     defaultNavigationOptions: {
+//       headerShown: false,
+//     },
+//   }
+// ) 
+
+
+// const appStack = createStackNavigator({
+//   Home : {
+//     screen : HomeScreenV2,
+//   },
+//   ChatRoom : {
+//     screen : ChatRoom
+//   }
+//   ,
+//   Hydrataion: {
+
+//     screen: Hydration,
+
+//   },
+//   NutritionContent : {
+//     screen: NutritionContent
+//   },
+//   NutritonContentDetails: {
+//     screen: NutritonContentDetails
+//   },
+
+//  },
+ 
+ 
+
+// {
+//   defaultNavigationOptions : {
+//     headerShown: false,
+//   },
+// } 
+
+// );
+
+
+
+
+
+// export default createAppContainer(
+//  createSwitchNavigator({
+//    Loading : Loading,
+//    Auth: Login_Registre,
+//    App : appStack,
+
+//  },
+
+//  {
+//    initialRouteName : "Loading"
+//  }
+
+//  )  
+// )
+
+
+// export default class App extends React.Component{
+
+
+
+//   render(){
+//     console.log(new Date().toUTCString())
+//     return(
+
+//       <View>
+//         <Text>hello world</Text>
+//       </View>
+
+//     );
+
+
+//   }
+
+
+// }
+
+
+
+
+//--------------------------------------------------------------
 
 
 // class  App extends React.Component {
@@ -190,71 +331,86 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 
 
+// meet me principal programme
 
+// const Login_Registre = createStackNavigator({
+//   Login : {
 
- 
-const appStack = createStackNavigator({
-  Home : {
-    screen : HomeScreen,
-  },
-  Conversation : {
-    screen : Conversation,
-  },
+//     screen : Login,
+
+//   },
+//   Register : {
+//     screen : Register,
+//   },
   
- },
+// },
+
+//   {
+//     defaultNavigationOptions: {
+//       headerShown: false,
+//     },
+//   }
+// ) 
+
+ 
+// const appStack = createStackNavigator({
+//   Home : {
+//     screen : HomeScreen,
+//   },
+//   Conversation : {
+//     screen : Conversation,
+//   },
+  
+//  },
  
 
-{
-  defaultNavigationOptions : {
-    headerShown: false,
-  },
-} 
+// {
+//   defaultNavigationOptions : {
+//     headerShown: false,
+//   },
+// } 
 
-);
+// );
 
-const AuthStack = createStackNavigator({
-  Login : {
-    screen : Routes,
-  },
-},
-{
- defaultNavigationOptions : {
-   headerShown: false,
- },
-} 
+// const AuthStack = createStackNavigator({
+//   Login : {
+//     screen : Routes,
+//   },
+// },
+// {
+//  defaultNavigationOptions : {
+//    headerShown: false,
+//  },
+// } 
 
-)
-
-
-
-export default createAppContainer(
- createSwitchNavigator({
-   Loading : loading,
-   App : appStack,
-   Auth : AuthStack,
-   CheckConn : CheckConn,
- },
-
- {
-   initialRouteName : "Loading"
- }
-
- )  
-)
+// )
 
 
+
+// export default createAppContainer(
+//  createSwitchNavigator({
+//    Loading : loading,
+//    App : appStack,
+//    Auth : Login_Registre,
+//    CheckConn : CheckConn,
+//  },
+
+//  {
+//    initialRouteName : "Loading"
+//  }
+
+//  )  
+// )
 
 
 
 
 
+
+// import React from 'react'
+// import {View,Text} from 'react-native'
 
 // export default function App(){
-
-
-// async ()=> {
-//   const data 
-// }
 
 
 
@@ -274,11 +430,6 @@ export default createAppContainer(
 
 
 //   )
-
-
-
-
-
 
 // }
 
@@ -2853,6 +3004,1761 @@ export default createAppContainer(
 //     height : "6%",
 //     alignItems: 'center'
 //   }
+
+
+
+// })
+
+//------------------------------------------Hydratation interface------------------------------------------------------------
+
+// import React from 'react'
+// import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet, ScrollView,Image,ImageBackground,Dimensions} from 'react-native'
+// import ProgressCircle from "react-native-progress-circle"
+// import { Modal } from 'react-native';
+// import RNSecureStorage,{ACCESSIBLE} from "rn-secure-storage"
+
+
+
+
+
+// export default class App extends React.Component{
+
+
+//   state = {
+//     currentCapacity : 0,
+//     percentage : 0,
+//     total : 2500,
+//     showModal : false,
+//     records : [],
+//     day : "",
+
+//   }
+
+//    messageIdGenerator() {
+//   // generates an id.
+//   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+//     let r = (Math.random() * 16) | 0,
+//       v = c == "x" ? r : (r & 0x3) | 0x8;
+//     return v.toString(16);
+//   });
+// }
+
+//   waterAmountRelativeIcon = (amount) =>{
+
+//     if(amount == 100){
+//       return (<Image source={require('./younness/assets/water100ml.png')}
+//         style={{ marginLeft: "8%", height: 32, width: 32 }} />)
+//     }
+//     else if(amount == 200){
+//       return (<Image source={require('./younness/assets/water200ml.png')}
+//         style={{ marginLeft: "8%", height: 32, width: 32 }} />)
+//     }
+//     else if (amount == 300) {
+//       return (<Image source={require('./younness/assets/water300ml.png')}
+//         style={{ marginLeft: "8%", height: 32, width: 32 }} />)
+//     }
+//     else if (amount == 400) {
+//       return (<Image source={require('./younness/assets/water400ml.png')}
+//         style={{ marginLeft: "8%", height: 32, width: 32 }} />)
+//     }
+//     else if (amount == 500) {
+//       return (<Image source={require('./younness/assets/water500ml.png')}
+//         style={{ marginLeft: "8%", height: 32, width: 32 }} />)
+//     }
+//   }
+
+//   addAmountOfWater = (amount) =>{
+//     var day = new Date().getUTCDate()
+//     RNSecureStorage.set("day",JSON.stringify(day),{accessible : ACCESSIBLE.WHEN_UNLOCKED})
+//     .then(()=>{
+//       console.log("new day is set")
+//     })
+//     .catch((error)=>console.log(error))
+
+//     var newCapacity = this.state.currentCapacity + amount
+//     this.setState({ currentCapacity: newCapacity })
+//     var addTime = new Date().getHours()+":"+new Date().getMinutes()
+//     //this.state.records.push({ time: addTime, amount: amount })
+//     // this.setState({ records: [...this.state.records,{ time: addTime, amount: amount }]})
+//     this.setState({ records: [...this.state.records,{ time: addTime, amount: amount }] })
+//     //this.setState({records : this.state.records})
+//     setTimeout(() => {
+//       if (this.state.currentCapacity < 2500) {
+//         var op = this.state.currentCapacity / this.state.total
+//         console.log("divided number :", op)
+//         var newPercentage = Math.floor(op * 100)
+//         this.setState({ percentage: newPercentage })
+//         RNSecureStorage.set("records",JSON.stringify(this.state.records),{accessible : ACCESSIBLE.WHEN_UNLOCKED})
+//         .then(()=>{
+//           console.log("record added")
+//         })
+//         .catch((e)=>console.log("error when trying to add record"))
+//       }
+//       else {
+//         this.setState({ percentage: 100 })
+//       }
+//     }, 100)
+    
+//   }
+
+//   componentDidMount(){
+
+   
+
+//     RNSecureStorage.get("day").then((data)=>{
+
+//       if(data != null){
+
+//         var object_day = JSON.parse(data)
+//         console.log("day :",object_day)
+
+//         if(object_day != new Date().getUTCDate()){
+//           var day = new Date().getUTCDate()
+//           RNSecureStorage.set("day", JSON.stringify(day), { accessible: ACCESSIBLE.WHEN_UNLOCKED })
+//             .then(() => {
+//               console.log("new day was set")
+//               this.setState({records : []})
+//               this.state.records.length = 0
+//             })
+//             .catch((error) => console.log(error))
+//         }
+//         else{
+//           RNSecureStorage.get("records").then((data)=>{
+//             if(data != null){
+//               var object_data = []
+//               object_data = JSON.parse(data)
+//               object_data.forEach((data) => {
+//                 var value = data.amount
+//                 this.setState({ currentCapacity: this.state.currentCapacity + value })
+//               })
+//               this.setState({records : object_data})
+//               console.log("object_data :",object_data)
+//             }
+//           })
+//           .then(()=>{
+//             //this.setState({ percentage: Math.floor(this.state.currentCapacity / this.state.total)*100})
+//             if (this.state.currentCapacity < 2500) {
+//               var op = this.state.currentCapacity / this.state.total
+//               console.log("devided number :", op)
+//               var newPercentage = Math.floor(op * 100)
+//               this.setState({ percentage: newPercentage })
+
+//             }
+//             else {
+//               this.setState({ percentage: 100 })
+//             }
+//           })
+//           .catch((error)=>console.log("error"))
+//         }
+//       }
+//       else{
+//         console.log("error happened")
+//         var day = new Date().getUTCDate()
+//         RNSecureStorage.set("day",JSON.stringify(day),{accessible : ACCESSIBLE.WHEN_UNLOCKED})
+//         .then(()=>{
+//           console.log("new day was set")
+//         })
+//         .catch((error)=>console.log(error))
+//       }
+
+
+//     })
+
+
+//   }
+
+
+// render(){
+
+
+//   return(
+
+//     <ImageBackground style={styles.container} source={require('./younness/assets/drinkWaterBackground.jpg')} 
+//         width={Dimensions.get('window').width} height={Dimensions.get('window').height}
+//     >
+
+
+
+//           <Modal visible={this.state.showModal}  transparent ={true} onRequestClose={()=>{
+//             this.setState({showModal : false});
+//           }} >
+
+//             <View style={styles.modalContainer}>
+
+//               <View style={styles.modalViewText}>
+
+//                 <Text style={{ fontSize: 18, fontWeight: 'bold', color: "white" }} > Choose amount of water that you drunk </Text>
+
+//               </View>
+
+//               <View style={styles.modalCard} >
+
+//                 <TouchableOpacity onPress={()=>{
+//                     this.addAmountOfWater(100)
+//                     this.setState({showModal : false})
+                    
+//                 }} style={{alignSelf : "center",marginVertical : "10%"}}  >
+
+//                   <Image source={require('./younness/assets/water100ml.png')}
+//                   style={{ marginLeft: "8%", height: 32, width: 32 }} />
+                  
+//               <Text
+//                 style={{ fontSize: 14, fontWeight: '200', color: "white",paddingTop : "3%" }}
+
+//               >100ml</Text>
+
+//                 </TouchableOpacity>
+
+//               <TouchableOpacity onPress={() => {
+//                 this.addAmountOfWater(200)
+//                 this.setState({showModal : false})
+//               }} >
+
+//                 <Image source={require('./younness/assets/water200ml.png')}
+//                   style={{ marginLeft: "8%", height: 64, width: 64 }} />
+                
+//                   <Text
+//                   style={{ fontSize: 14, fontWeight: '200', color: "white", paddingTop: "3%",paddingLeft :"15%" }}
+
+//                 >200ml</Text>
+//               </TouchableOpacity>
+
+//             <TouchableOpacity onPress={() => {
+//               this.addAmountOfWater(300)
+//               this.setState({showModal : false})
+//             }} >
+
+//               <Image source={require('./younness/assets/water300ml.png')}
+//                 style={{ marginLeft: "8%", height: 64, width: 64 }} />
+
+//               <Text
+//                 style={{ fontSize: 14, fontWeight: '200', color: "white", paddingTop: "3%", paddingLeft: "15%" }}
+
+//               >300ml</Text>
+//             </TouchableOpacity>
+
+
+//               </View>
+
+
+//           <View style={styles.modalCard} >
+
+//             <TouchableOpacity onPress={() => {
+//               this.addAmountOfWater(400)
+//               this.setState({showModal : false})
+//             }} >
+
+//               <Image source={require('./younness/assets/water400ml.png')}
+//                 style={{ marginLeft: "8%", height: 64, width: 64 }} />
+//               <Text
+//                 style={{ fontSize: 14, fontWeight: '200', color: "white", paddingTop: "3%", paddingLeft: "15%" }}
+
+//               >400ml</Text>
+
+//             </TouchableOpacity>
+
+//             <TouchableOpacity onPress={() => {
+//               this.addAmountOfWater(500)
+//               this.setState({showModal : false})
+//             }} >
+
+//               <Image source={require('./younness/assets/water500ml.png')}
+//                 style={{ marginLeft: "8%", height: 64, width: 64 }} />
+//               <Text
+//                 style={{ fontSize: 14, fontWeight: '200', color: "white", paddingTop: "3%", paddingLeft: "15%" }}
+
+//               >500ml</Text>
+
+//             </TouchableOpacity>
+
+            
+
+
+//           </View>
+
+
+              
+
+//             </View>
+
+
+//           </Modal>
+
+
+//       <ScrollView>
+//         <View style={styles.drinkWaterTitle} >
+
+//           <Text style={styles.drinkWaterTitleText} >Drink and see your water drink records</Text>
+
+//         </View>
+
+
+//         <View style={styles.logoView} >
+
+//           <Image  source={require('./younness/assets/drinkwaterlogo.jpeg')}
+//             style={styles.logoStyle}
+//            />
+
+//         </View>
+
+        
+
+
+//         <View style={styles.card} > 
+
+//           <View style={styles.waterDrinkTracker} >
+
+
+//             <ProgressCircle
+
+//               percent={this.state.percentage}
+//               radius={90}
+//               borderWidth={8}
+//               color="#3399FF"
+//               shadowColor="#999"
+//               bgColor="#fff"
+//             >
+
+//               <View style={{ alignSelf: "center" }} >
+
+//                 <Text style={styles.waterDrinkTrackerText} > <Text style={{ color: "#3399FF" }} > {this.state.currentCapacity} </Text>/ {this.state.total}ml </Text>
+
+//                 <Text style={styles.completeTarget} > {this.state.percentage}% </Text>
+
+//               </View>
+
+//             </ProgressCircle>
+
+
+//             <TouchableOpacity style={{ marginTop: "10%", marginLeft: "18%" }}
+//               onPress={() => {
+//                 // var newCapacity = this.state.currentCapacity + 100
+//                 // this.setState({ currentCapacity: newCapacity })
+
+//                 // setTimeout(() => {
+//                 //   if (this.state.currentCapacity < 2500) {
+//                 //     var op = this.state.currentCapacity / this.state.total
+//                 //     console.log("divided number :", op)
+//                 //     var newPercentage = Math.floor(op * 100)
+//                 //     this.setState({ percentage: newPercentage })
+
+//                 //   }
+//                 //   else {
+//                 //     this.setState({ percentage: 100 })
+//                 //   }
+//                 // }, 100)
+
+//                 this.setState({ showModal: true })
+
+//               }}
+
+//             >
+
+//               <Image source={require('./younness/assets/add.png')} />
+
+//             </TouchableOpacity>
+
+
+//           </View>
+
+//         </View>
+
+
+
+//         <View style={styles.RecordsSection} >
+
+//           <View style={styles.RecordsViewText} >
+
+//             <Text style={styles.recordsText} >Records</Text>
+
+//           </View>
+
+//           <View style={styles.recordsItems} >
+
+//             {this.state.records.length != 0 ? 
+//               this.state.records.map(list=>{
+//                 return (<View key={this.messageIdGenerator()} style={{flexDirection : "row",marginBottom : "5%"}} >
+//                 {/* <Icons name="wine" size={42} color="#D0EFFE" style={{ marginLeft: "15%" }} /> */}
+//                   {this.waterAmountRelativeIcon(list.amount)}
+//                 <Text style={{ fontSize: 18, marginLeft: "10%", marginTop: "3%" }} > {list.time}    </Text>
+//                 <Text style={{ fontSize: 18, marginLeft: "10%", marginTop: "3%" }} > {list.amount}ml   </Text>
+//               </View>
+//               )
+
+//               })
+//               : <View>
+//                 <Text style={{fontSize:19,fontWeight : "bold",marginHorizontal : "15%",marginBottom : "3%"}} >There is no record for today</Text>
+//               </View>
+//               }
+
+
+//           </View>
+
+
+
+//         </View>
+
+
+
+//       </ScrollView>
+
+//       </ImageBackground>
+
+//   )
+
+
+
+// }
+// }
+
+// const styles = StyleSheet.create({
+
+
+//   container : {
+//     flex : 1,
+//     backgroundColor : "white",
+//   },
+//   drinkWaterTitle : {
+
+//     height : 60,
+//     backgroundColor: "#78B5EE",
+//     //alignSelf : "center",
+  
+
+//   },
+//   logoView : {
+//       marginTop : "5%",
+//       alignSelf : "center"
+//   },
+//   logoStyle : {
+//       height : 240,
+//       width : 250,
+//   },
+//   drinkWaterTitleText : {
+//     fontSize : 18,
+//     fontWeight : "bold",
+//     color : "white",
+//     textAlign : "center",
+//     marginTop : "3%"
+//   },
+//   card : {
+//     marginTop: "5%",
+//     marginLeft : "5%",
+//     marginRight : "5%",
+//     paddingTop : "5%",
+//     paddingBottom : "5%",
+//     backgroundColor : "white",
+//     borderWidth : 2 ,
+//     borderRadius : 10,
+//     borderColor : "gray",
+//   },
+//   waterDrinkTracker : {
+//     marginTop : "5%",
+//     alignSelf : "center",
+//     backgroundColor : "white",
+//   },
+//   waterDrinkTrackerText : {
+//     fontSize : 16,
+//     fontWeight : "bold",
+//     color : "black",
+//   },
+//   completeTarget : {
+//     marginLeft : "12%",
+//     fontSize: 22,
+//     fontWeight: "bold",
+//     color: "black",
+//     marginTop : "10%",
+
+
+//   },
+//   RecordsSection : {
+//     borderColor: "#3399FF",
+//     borderWidth : 3,
+//     borderRadius : 6,
+//     marginTop : "10%",
+//     backgroundColor : "white",
+
+//   },
+//   recordsText :{
+//     fontSize: 22,
+//     fontWeight: "bold",
+//     color: "white",
+//     marginLeft : "2%"
+//   },
+//   recordsItems : {
+//     marginTop : "3%",
+//     flex : 1,
+//   },
+//   RecordsViewText : {
+//     marginTop: "2%",
+//     backgroundColor: "#3399FF",
+//     height : 30,
+//   },
+  
+//   modalContainer : {
+//     backgroundColor: "rgba(0,204,255,0.7)",
+//     height : "60%",
+//     marginVertical : "50%",
+//     marginLeft : "5%",
+//     marginRight : "5%"
+
+
+//   },
+//   modalViewText : {
+//     alignSelf : "center",
+//     marginHorizontal : "10%",
+//     marginTop : "2%",
+
+//   },
+//   modalCard : {
+//     flexDirection : "row",
+//     marginLeft : "3%",
+//     marginTop : "10%",
+
+//   },
+ 
+
+
+// })
+
+
+
+//-----------------------Initiation screen animation--------------------------
+
+// import React from 'react'
+// import { View, Text, StyleSheet, Animated, Dimensions, ImageBackground, Image,TouchableWithoutFeedback} from "react-native"
+
+
+//   export default class App extends React.Component{
+
+
+
+//       state = {
+//         fadeAnim : new Animated.Value(0),
+//         goDown: new Animated.Value(0),
+//         goUp: new Animated.Value(0),
+//       }
+
+
+//       componentDidMount(){
+
+//        setTimeout(() => {
+
+//          Animated.timing(
+//            this.state.goDown,
+//            {
+//              toValue: 80,
+//              duration: 2000,
+//              useNativeDriver: false,
+//            }
+//          ).start();
+
+//          Animated.timing(
+//            this.state.goUp,
+//            {
+//              toValue: -500,
+//              duration: 2000,
+//              useNativeDriver: false,
+//            }
+//          ).start();
+
+         
+//        }, 1000);
+       
+
+//       }
+      
+      
+
+//       render(){
+
+
+//         return(
+
+//           <TouchableWithoutFeedback onPress={() => {
+//             console.log('you just get out from the input');
+//             Keyboard.dismiss();
+//           }
+//           } style={{ flex: 1, }}
+//           >
+
+//             <ImageBackground source={require('./younness/assets/background2.jpeg')}
+//             style={
+//               {
+//                 height : Dimensions.get('window').height , width : Dimensions.get('window').width 
+//               }
+//             }
+//             >
+
+           
+
+//             <View style={{alignSelf : 'center',marginTop : 60}} >
+
+//               <Animated.View style={{ paddingTop: this.state.goDown }}>
+
+//                   <Image  source={require('./younness/assets/logo1.png')}  style={styles.image} />
+
+//               </Animated.View>
+
+//             </View>
+
+//             <View style={{ zIndex : 10,marginTop : 500 }} >
+
+//               <Animated.View style={{ marginTop: this.state.goUp }} >
+
+//                 <Image source={require('./younness/assets/logo02.png')} 
+//                 style={{height : 200,width:200,marginLeft :"20%",tintColor : "white" }} />
+//                 <Text 
+//                 style={{fontSize : 22,fontWeight : 'bold',
+//                 fontStyle :'italic',marginTop : -55,marginHorizontal : "20%",color : "white",
+//                 }} >THINK DIFFERENTLY </Text>
+                 
+//                 <Text
+//                     style={{
+//                       fontSize: 22, fontWeight: 'bold',
+//                       fontStyle: 'italic',
+//                        marginTop: "2%", marginHorizontal: "25%",color : "white"
+//                     }} >ABOUT YOUR </Text>
+//                 <Text
+//                     style={{
+//                       fontSize: 22, fontWeight: 'bold',
+//                       fontStyle: 'italic', 
+//                        marginTop: "2%",marginHorizontal : "25%",color : "white"
+//                     }} >PERFORMANCE</Text>
+
+                   
+
+//               </Animated.View>
+
+//             </View>
+
+//             </ImageBackground>
+//           </TouchableWithoutFeedback>
+
+//         )
+
+
+
+
+
+//       }
+
+
+
+
+
+
+
+
+
+//   }
+
+
+
+// const styles = StyleSheet.create({
+  
+//   image : {
+//     height : 200,
+//     width : 200,
+//     tintColor : "white"
+//   }
+
+
+
+// })
+
+
+//-------------------Bottom Tab----------------
+
+
+// import { SafeAreaView,View, } from 'react-native';
+
+
+
+// export default class App extends React.Component{
+
+
+
+
+
+
+//   render(){
+
+
+//     return(
+
+//         <SafeAreaView>
+
+//         </SafeAreaView>
+
+
+//     )
+
+
+
+
+
+
+
+//   }
+
+
+
+
+
+
+
+
+
+
+// }
+
+
+//-----------------------------------------------------
+
+// import React from "react"
+// import {SafeAreaView,View,Text,StyleSheet,TouchableOpacity,ScrollView} from "react-native"
+// import Icons from 'react-native-vector-icons/FontAwesome5'
+// import Homev2 from "./younness/components/Home"
+// import Hydrationv2 from './younness/components/Hydratation';
+// import Appabout from "./younness/components/aboutApp"
+// import Profile from "./younness/components/userProfile"
+
+
+// export default class App extends React.Component{
+
+//       state = {
+//         acceuilColor : "white",
+//         footballColor : "black",
+//         tableColor: "black",
+//         profileColor: "black",
+//         acceuilDisplay: "flex",
+//         footballDisplay: "none",
+//         tableDisplay: "none",
+//         profileDisplay: "none",
+//       }
+
+
+//     render(){
+
+//       return(
+
+//         <SafeAreaView style={{flex : 1}} >
+
+//         <ScrollView>
+
+//           <View style={{flex : 1,display :this.state.acceuilDisplay }} >
+//             <Homev2 />
+//           </View>
+
+//           <View style={{ flex: 1, display: this.state.footballDisplay }} >
+//               <Hydrationv2 />
+//           </View>
+
+//           <View style={{ flex: 1, display: this.state.tableDisplay }} >
+//             <Appabout />
+//           </View>
+          
+//           <View style={{ flex: 1, display: this.state.profileDisplay }} >
+//               <Profile />
+//           </View>
+
+//         </ScrollView>
+
+
+//         <View style={styles.bottomTabStyle}>
+
+
+//           <View style={[styles.bottomTabItems,{marginLeft : "8%"}]} >
+//             <TouchableOpacity onPress={()=>{
+//               this.setState({
+//                 acceuilColor: "white",
+//                 footballColor: "black",
+//                 tableColor: "black",
+//                 profileColor: "black",
+//                 acceuilDisplay: "flex",
+//                 footballDisplay: "none",
+//                 tableDisplay: "none",
+//                 profileDisplay: "none",
+//               })
+//             }} >
+//               <Icons name="home" size={32} color={this.state.acceuilColor} />
+//               <Text style={{ color: this.state.acceuilColor}} >Accueil</Text>
+//               </TouchableOpacity>
+
+//           </View>
+
+//             <View style={styles.bottomTabItems} >
+//               <TouchableOpacity onPress={() => {
+//                 this.setState({
+//                   acceuilColor: "black",
+//                   footballColor: "white",
+//                   tableColor: "black",
+//                   profileColor: "black",
+//                   acceuilDisplay: "none",
+//                   footballDisplay: "flex",
+//                   tableDisplay: "none",
+//                   profileDisplay: "none",
+//                 })
+//               }} >
+//               <Icons name="futbol" size={32} color={this.state.footballColor} />
+//               <Text style={{ color: this.state.footballColor}} >Football</Text>
+
+//               </TouchableOpacity>
+//             </View>
+
+//             <View style={styles.bottomTabItems} >
+//                 <TouchableOpacity onPress={() => {
+//                 this.setState({
+//                   acceuilColor: "black",
+//                   footballColor: "black",
+//                   tableColor: "white",
+//                   profileColor: "black",
+//                   acceuilDisplay: "none",
+//                   footballDisplay: "none",
+//                   tableDisplay: "flex",
+//                   profileDisplay: "none",
+//                 })
+//                 }} >
+//               <Icons name="table" size={32} color={this.state.tableColor} />
+//               <Text style={{ color: this.state.tableColor}} >Table</Text>
+
+//               </TouchableOpacity>
+//             </View>
+
+//             <View style={styles.bottomTabItems} >
+//                   <TouchableOpacity onPress={() => {
+//                 this.setState({
+//                   acceuilColor: "black",
+//                   footballColor: "black",
+//                   tableColor: "black",
+//                   profileColor: "white",
+//                   acceuilDisplay: "none",
+//                   footballDisplay: "none",
+//                   tableDisplay: "none",
+//                   profileDisplay: "flex",
+//                 })
+//                   }} >
+//               <Icons name="user-circle" size={32} color={this.state.profileColor} />
+//               <Text style={{ color: this.state.profileColor}} >Profile</Text>
+
+//               </TouchableOpacity>
+//             </View>
+
+//         </View>
+
+//         </SafeAreaView>
+
+
+//       )
+//     }
+
+
+
+// }
+
+
+// const styles = StyleSheet.create({
+
+//   container : {
+//     flex :1,
+
+//   },
+//   bottomTabStyle : {
+//     backgroundColor : "green",
+//     flexDirection : "row",
+//   },
+//   bottomTabItems : {
+//     alignSelf: 'center',
+//     marginLeft : "10%",
+//     marginRight : "2%"
+//   }
+
+
+// })
+
+
+
+//  -----------------------------nouveau acceuil------------------------------------------
+
+
+// import React from 'react'
+// import {SafeAreaView,View,Text,StyleSheet,Image,TouchableOpacity,ScrollView,Dimensions} from "react-native"
+// import Swiper from "react-native-swiper"
+// import BottomTab from "./younness/components/BottomTabTest"
+// import Icons from 'react-native-vector-icons/FontAwesome5'
+
+
+
+// export default class App extends React.Component{
+
+
+//   state = {
+//     acceuilColor: "white",
+//     footballColor: "black",
+//     tableColor: "black",
+//     profileColor: "black",
+//     acceuilDisplay: "flex",
+//     footballDisplay: "none",
+//     tableDisplay: "none",
+//     profileDisplay: "none",
+//   }
+
+
+
+//   render(){
+
+
+
+
+//     return(
+
+
+//       <SafeAreaView style={styles.container} >
+
+//       <View  style={styles.head}>
+
+//         <View style={styles.optionAndLogo} >
+//           <View  >
+
+//           <Image 
+//             source={require('./younness/assets/logo1.png')}
+//             style={styles.logo}
+
+//           />
+//           <Text style={{color:"white",fontSize:14,
+//           fontWeight:"bold",marginTop : "-20%",
+//           marginLeft : "20%"}} >Foot App</Text>
+//           </View>
+          
+//           <Image source={require('./assets/more.png')} 
+//             style={styles.option}
+//            />
+
+//         </View>
+
+        
+//       </View>
+
+//         <ScrollView   >
+
+//           <View style={styles.largeItemView} >
+
+//             <Image
+//               source={require('./younness/assets/nutrition.jpg')}
+//               style={styles.largeItemImageStyle}
+//             />
+
+//             <View style={styles.largeItemTextStyle} >
+//               <Text style={styles.largeItemText} >NUTRITION</Text>
+//             </View>
+
+
+//           </View>
+
+
+
+//           <Swiper style={{height : 300}}
+//             showsButtons={false}
+//             horizontal={true}
+
+//           >
+
+//             <View style={{ flexDirection: "row", flex: 1,marginLeft : "5%" }} >
+//               <View style={styles.itemCard} >
+
+//                 <Image
+//                   source={require('./younness/assets/hydration.png')}
+//                   style={styles.itemImageStyle}
+//                 />
+
+//                 <View style={styles.itemTextStyle} >
+//                   <Text style={styles.itemText} >HYDRATATION</Text>
+//                 </View>
+
+//               </View>
+
+//               <View style={[styles.itemCard, { marginLeft: "10%" }]} >
+
+//                 <Image
+//                   source={require('./younness/assets/mindset.jpg')}
+//                   style={styles.itemImageStyle}
+//                 />
+
+//                 <View style={styles.itemTextStyle} >
+//                   <Text style={styles.itemText} >MINDSET</Text>
+//                 </View>
+
+//               </View>
+//             </View>
+
+//             <View style={{ flexDirection: "row", flex: 1, marginLeft : "5%" }} >
+//               <View style={styles.itemCard} >
+
+//                 <Image
+//                   source={require('./younness/assets/phone.jpg')}
+//                   style={styles.itemImageStyle}
+//                 />
+
+//                 <View style={styles.itemTextStyle} >
+//                   <Text style={styles.itemText} >MESSENGER</Text>
+//                 </View>
+
+//               </View>
+
+//               <View style={[styles.itemCard, { marginLeft: "10%" }]} >
+
+//                 <Image
+//                   source={require('./younness/assets/beach_at_night.jpg')}
+//                   style={styles.itemImageStyle}
+//                 />
+
+//                 <View style={styles.itemTextStyle} >
+//                   <Text style={styles.itemText} >SOMMEIL</Text>
+//                 </View>
+
+//               </View>
+//             </View>
+
+
+
+//           </Swiper>
+
+
+//           <View style={styles.largeItemView} >
+
+
+//             <Image
+//               source={require('./younness/assets/recuperation.png')}
+//               style={styles.largeItemImageStyle}
+//             />
+
+//             <View style={styles.largeItemTextStyle} >
+//               <Text style={styles.largeItemText} >RECUPERATION</Text>
+//             </View>
+
+
+//           </View>
+
+
+//         </ScrollView>
+
+
+//       </SafeAreaView>
+
+
+
+//     )
+
+
+
+
+
+//   }
+
+
+// }
+
+
+// const styles = StyleSheet.create({
+
+//   container : {
+//     flex : 1,
+//     backgroundColor : "white",
+//   },
+//   head : {
+//     height : "20%",
+//     borderBottomLeftRadius : 40,
+//     borderBottomRightRadius : 40,
+//     backgroundColor: "#279c7c",
+//   },
+//   titleView : {
+//       marginVertical : "1%",
+//       alignSelf : "center",
+//   },
+//   titleStyle : {
+//     fontSize : 20,
+//     fontWeight : "bold",
+//     color : "white",
+//   },
+//   optionAndLogo : {
+//     marginVertical : "5%",
+//     marginLeft : "8%",
+//     flexDirection : "row"
+//   },
+//   logo : {
+//     height : 100,
+//     width : 100,
+//     borderRadius : 100/2,
+//     tintColor  : "white",
+//   },
+//   option : {
+//     tintColor : "white",
+//     left : "100%",
+//     marginLeft : "20%",
+//     marginTop : "8%"
+//   },
+//   body : {
+//     marginLeft : "4%",
+//     marginRight : "4%",
+//     marginTop : "6%",
+//     flex : 1,
+//   },
+//   itemCard : {
+//     marginTop : "10%",
+//     height : "70%",
+//     width : "40%",
+//     //backgroundColor : "black",
+//     borderWidth : 2,
+//     borderLeftColor: "#eaeceb",
+//     borderRightColor: "#eaeceb",
+//     borderBottomColor: "#eaeceb",
+//     borderTopColor : "white",
+//     borderTopLeftRadius: 20,
+//     borderTopRightRadius: 20,
+//     shadowColor : "gray",
+    
+//   },
+//   itemTextStyle : {
+//     marginTop : "5%",
+//     alignSelf : "center"
+//   },
+//   itemText : {
+//     fontSize : 16,
+//     fontWeight : 'bold',
+//     color : "black"
+//   },
+//   itemImageStyle : {
+//     height: "80%",
+//     width: "100%",
+//     borderTopLeftRadius: 20,
+//     borderTopRightRadius: 20
+//   },
+//   largeItemView : {
+//     // padding: "30%",
+//     height: 200,
+//     width: "90%",
+//     backgroundColor : "black",
+//     marginTop : "10%",
+//     marginLeft : "5%",
+//     marginRight : "5%",
+//     marginBottom : "8%",
+//   },
+  
+// largeItemImageStyle : {
+//   height: "80%",
+//   width: "100%",
+// },
+// largeItemTextStyle : {
+//   marginTop: "3%",
+//   alignSelf: "center",
+// },
+// largeItemText : {
+//   fontSize: 16,
+//   fontWeight: 'bold',
+//   color: "white"
+// },
+
+// })
+
+
+//----------------------Radar Chart----------------------------------
+
+
+import React, { Component } from 'react';
+
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  processColor
+} from 'react-native';
+import update from 'immutability-helper';
+
+import { RadarChart } from 'react-native-charts-wrapper';
+
+
+ export default class App extends React.Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      data: {},
+      legend: {
+        enabled: true,
+        textSize: 16,
+        form: 'CIRCLE',
+        wordWrapEnabled: true,
+        textColor: processColor('white'),
+        
+      }
+    };
+  }
+
+  componentDidMount() {
+    this.setState(
+      update(this.state, {
+        data: {
+          $set: {
+            dataSets: [{
+              values: [{ value: 100 }, { value: 110 }, { value: 105 }, { value: 115 }, { value: 110 }],
+              label: 'DS 1',
+              config: {
+                color: processColor('#FF8C9D'),
+                valueTextColor: processColor('#FF8C9D'),
+                valueTextSize: 16,
+                drawFilled: true,
+                fillColor: processColor('#FF8C9D'),
+                fillAlpha: 100,
+                lineWidth: 2
+              },
+              color: processColor('#FFFFFF'),
+            }, {
+              values: [{ value: 115 }, { value: 100 }, { value: 105 }, { value: 110 }, { value: 120 }],
+              label: 'DS 2',
+              config: {
+                color: processColor('#C0FF8C'),
+                valueTextColor: processColor('#C0FF8C'),
+                valueTextSize: 16,
+                drawFilled: true,
+                fillColor: processColor('#C0FF8C'),
+                fillAlpha: 150,
+                lineWidth: 1.5
+              }
+            }, {
+              values: [{ value: 105 }, { value: 115 }, { value: 121 }, { value: 110 }, { value: 105 }],
+              label: 'DS 3',
+              config: {
+                color: processColor('#8CEAFF'),
+                valueTextColor: processColor('#8CEAFF'),
+                valueTextSize: 16,
+                drawFilled: true,
+                fillColor: processColor('#8CEAFF'),
+                
+              }
+            }],
+          }
+        },
+        xAxis: {
+          $set: {
+            valueFormatter: ['A', 'B', 'C', 'D', 'E'],
+            textColor: processColor('white'),
+            textSize: 18,
+          }
+        },
+        
+        
+      })
+    );
+  }
+
+  handleSelect(event) {
+    let entry = event.nativeEvent
+    if (entry == null) {
+      this.setState({ ...this.state, selectedEntry: null })
+    } else {
+      this.setState({ ...this.state, selectedEntry: JSON.stringify(entry) })
+    }
+
+    console.log(event.nativeEvent)
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+
+        {/* <View style={{ height: 80 }}>
+          <Text> selected entry</Text>
+          <Text> {this.state.selectedEntry}</Text>
+        </View> */}
+
+        <View style={styles.container}>
+          <RadarChart
+            style={styles.chart}
+            data={this.state.data}
+            xAxis={this.state.xAxis}
+            yAxis={{ drawLabels: true,textColor : processColor('white'),fontWeight : "bold",textSize : 15 }}
+            chartDescription={{ text: '' }}
+            legend={this.state.legend}
+            drawWeb={true}
+
+            webLineWidth={5}
+            webLineWidthInner={5}
+            webAlpha={255}
+            webColor={processColor("gray")}
+            webColorInner={processColor("gray")}
+            
+
+            skipWebLineCount={1}
+            onSelect={this.handleSelect.bind(this)}
+            onChange={(event) => console.log(event.nativeEvent)}
+          />
+        </View>
+
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'black'
+  },
+  chart: {
+    flex: 1,
+  }
+});
+
+
+
+// ----------------------------Athlete Programme ------------------------
+
+// import React from "react"
+// import {SafeAreaView,View,Text,StyleSheet,TouchableOpacity,Image} from "react-native"
+
+
+
+
+
+// export default class App extends React.Component{
+
+
+//   render(){
+
+
+//     return(
+//       <SafeAreaView style={styles.container} >
+
+//       <View style={styles.card} >
+ 
+//         <View style={styles.cardItem}>
+
+//           <Image 
+//               source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_xBCRKLnDjw_o48CbyOVERfkFO0uhMSjnvw&usqp=CAU"}}
+//             style={styles.image}
+//           />
+
+//           <View style={styles.itemExpressions} >
+//             <Text style={styles.personFullName}>ADAMA DIAKHABY</Text>
+//             <Text style={styles.startedDate}>Date début : 28/10/2020</Text>
+//             {/* put here expiration Date */}
+//           </View>
+          
+//           <Text style={styles.itemStatusOpen} >En cours</Text>
+
+//         </View>
+
+//       </View>
+
+//       <View style={styles.card} >
+
+//         <View style={styles.cardItem}>
+
+//           <Image
+//             source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR58HXKC8JQGbr3IdX2IMXCBD2AgHc7NMngpg&usqp=CAU" }}
+//             style={styles.image}
+//           />
+
+//           <View style={styles.itemExpressions} >
+//             <Text style={styles.personFullName}>THOMAS FONTAINE</Text>
+//             <Text style={styles.startedDate}>Date début : 01/02/2020</Text>
+//             {/* put here expiration Date */}
+//             <Text style={styles.startedDate}>Date fin : 27/10/2020</Text>
+//           </View>
+          
+//           <Text style={styles.itemStatusClosed} >Expiré</Text>
+
+//         </View>
+
+//       </View>
+
+//       </SafeAreaView>
+//     )
+
+
+
+//   }
+
+
+
+// }
+
+// const styles = StyleSheet.create({
+
+//   container : {
+//     flex : 1,
+//     backgroundColor  : "white",
+//   },
+//   card : {
+//     marginTop : "2%",
+//     marginBottom : "2%",
+//     marginLeft : "3%",
+//     marginRight : "3%",
+//     borderWidth : 3,
+//     borderColor : "black",
+//     height : 150
+//   },
+//   cardItem : {
+//     flexDirection : "row",
+//     margin : "3%",
+//     alignItems : "center"
+//   },
+//   image : {
+//       height : 130,
+//       width : 100,
+//   },
+//   itemExpressions : {
+//     marginLeft : "8%",
+//     marginTop : "-20%",
+//   },
+//   personFullName : {
+//     fontSize : 20,
+//     fontWeight : "bold",
+//   },
+//   startedDate : {
+//     marginTop : "3%",
+//     fontSize : 16,
+
+//   },
+//   itemStatusOpen : {
+//      color: "green", 
+//      fontSize: 14,
+//      fontWeight: "bold",
+//      position : "absolute",
+//      top: "80%",
+//      marginLeft : "80%"
+//   },
+//   itemStatusClosed: {
+//     color: "red",
+//     fontSize: 14,
+//     fontWeight : "bold",
+//     position: "absolute",
+//     top : "80%",
+//     marginLeft: "80%"
+//   },
+
+
+// })
+
+//----------------------Athlete programme-----------------------
+
+
+
+// import React from "react"
+// import {SafeAreaView,View,Text,StyleSheet,TouchableOpacity,Image,ScrollView} from "react-native"
+// import Icon from "react-native-vector-icons/Ionicons"
+
+// export default class App extends React.Component{
+
+
+//   render(){
+
+//       return(
+
+//         <SafeAreaView style={styles.container} >
+    
+//         <ScrollView>
+
+//         <View style={styles.head} >
+//           <Icon 
+//               name="arrow-back-sharp"
+//               size={24}
+//               color="white"
+//               style={{marginLeft : "3%"}}
+//           />
+//           <Text style={styles.headTitleStyle} >ADAMA DIAKHIBY</Text>
+//         </View>
+
+//             <View style={styles.ImageView} >
+
+//               <Image
+//                 source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_xBCRKLnDjw_o48CbyOVERfkFO0uhMSjnvw&usqp=CAU" }}
+//                 style={styles.image}
+//               />
+
+//             </View>
+
+//             <View style={styles.programmeView} >
+
+//               <View style={styles.programmeItem} >
+
+//                 <Text style={styles.itemTitle} >Lundi : </Text>
+
+//                 <View style={styles.itemData}>
+
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                 </View>
+
+//               </View>
+
+//             </View>
+
+
+//             <View style={styles.programmeView} >
+
+//               <View style={styles.programmeItem} >
+
+//                 <Text style={styles.itemTitle} >Mardi : </Text>
+
+//                 <View style={styles.itemData}>
+
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                 </View>
+
+//               </View>
+
+//             </View>
+
+
+
+//             <View style={styles.programmeView} >
+
+//               <View style={styles.programmeItem} >
+
+//                 <Text style={styles.itemTitle} >Mercredi : </Text>
+
+//                 <View style={styles.itemData}>
+
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                 </View>
+
+//               </View>
+
+//             </View>
+
+
+
+
+//             <View style={styles.programmeView} >
+
+//               <View style={styles.programmeItem} >
+
+//                 <Text style={styles.itemTitle} >Jeudi : </Text>
+
+//                 <View style={styles.itemData}>
+
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                 </View>
+
+//               </View>
+
+//             </View>
+
+
+
+
+
+//             <View style={styles.programmeView} >
+
+//               <View style={styles.programmeItem} >
+
+//                 <Text style={styles.itemTitle} >Vendredi : </Text>
+
+//                 <View style={styles.itemData}>
+
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                   <View style={styles.itemDataRow} >
+
+//                     <View style={styles.pointViewStyle} />
+//                     <Text style={styles.itemDataStyle} >Petit déjouné 9H MAX</Text>
+
+//                   </View>
+//                 </View>
+
+//               </View>
+
+//             </View>
+
+//         </ScrollView>
+
+//         </SafeAreaView>
+
+//       )
+
+//   }
+
+
+// }
+
+// const styles = StyleSheet.create({
+
+//   container : {
+//     flex : 1,
+
+//   },
+//   head : {
+//     height : 60,
+//     backgroundColor: "#042f66",
+//     flexDirection : "row",
+//     alignItems :"center",
+//     paddingTop : "3%",
+//     paddingBottom : "3%"
+//   },
+//   headTitleStyle : {
+//     fontSize :18,
+//     fontWeight :"bold",
+//     marginLeft : "10%",
+//     color : "white"
+//   },
+//   ImageView : {
+//     margin : "3%",
+//     borderWidth : 3,
+//     borderColor : "black"
+//   },
+//   image : {
+//     height : 200,
+//     width : "100%",
+//   },
+//   programmeView : {
+//     margin : "2%",
+//     borderWidth: 2,
+//     borderColor: "gray",
+//     borderRadius : 15,
+//     backgroundColor: "#eeeee4"
+    
+//   },
+//   programmeItem : {
+//     marginLeft : "3%",
+//     marginTop : "4%",
+//     marginBottom : "4%",
+//   },
+//   itemTitle : {
+//     fontSize : 22,
+//     fontWeight : "bold",
+//     color : "black"
+//   },
+//   itemData : {
+//     marginLeft: "2%",
+//     marginTop: "2%",
+//   },
+//   itemDataRow : {
+//     flexDirection : "row",
+//     alignItems : "center"
+//   },
+//   pointViewStyle : {
+//     height : 5,
+//     width : 5,
+//     borderRadius : 5/2,
+//     backgroundColor : "black",
+    
+//   },
+//   itemDataStyle : {
+//     fontSize : 16,
+//     marginLeft : "5%"
+
+//   },
 
 
 

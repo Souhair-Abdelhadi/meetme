@@ -1,11 +1,20 @@
-
-
-
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable space-infix-ops */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable keyword-spacing */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-shadow */
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable semi */
+/* eslint-disable prettier/prettier */
 
 import React  from 'react';
 import {StyleSheet,View,Text} from 'react-native';
 import OptionsMenu from 'react-native-option-menu';
-import  firebase from 'react-native-firebase'
+import * as firebase from 'react-native-firebase'
 
 export default class Test extends React.Component{
 
@@ -16,7 +25,12 @@ export default class Test extends React.Component{
     SignOut = () =>{
         firebase.auth().signOut()
         .catch(error => error.message);
-        console.log('user has Signed out')
+        console.log('user has Signed out');
+        firebase.database().ref("/users/" + firebase.auth().currentUser.uid)
+        .update({
+          status: "offline"
+        })
+        .catch(e => console.log(e));
     }
 
     Cancel = () =>{

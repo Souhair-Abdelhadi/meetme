@@ -1,9 +1,18 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable space-infix-ops */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable keyword-spacing */
 /* eslint-disable no-trailing-spaces */
+/* eslint-disable no-shadow */
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable semi */
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {Text,View,TouchableWithoutFeedback,Keyboard,
     TextInput,StyleSheet,ScrollView,Image, Button,TouchableOpacity,Modal,Dimensions} from 'react-native';
-import { Actions } from 'react-native-router-flux';
 import * as firebase from 'react-native-firebase';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -110,8 +119,15 @@ export default class Register extends React.Component{
     }
 
 
-     signin() {
-        Actions.signin();
+
+
+    componentWillUnmount() {
+
+
+        // fix Warning: Can't perform a React state update on an unmounted component
+        this.setState = (state, callback) => {
+            return;
+        };
     }
 
 render()
@@ -236,7 +252,7 @@ render()
 
                     <Text style={{fontSize:16,fontWeight:"bold",color: 'white'}} > Already  have an account ?  </Text>
 
-                        <TouchableOpacity  onPress={this.signin}>
+                               <TouchableOpacity onPress={() =>this.props.navigation.navigate("Login")}>
                                 <Text style={styles.signIn}>Sign In</Text>
                         </TouchableOpacity>
 

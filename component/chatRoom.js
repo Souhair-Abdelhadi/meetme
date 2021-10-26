@@ -245,7 +245,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import {
-    StyleSheet, View, TouchableOpacity, Text,Modal,
+    StyleSheet, View, TouchableOpacity, Text,
     Platform,
     PermissionsAndroid,
     Dimensions,
@@ -569,16 +569,7 @@ export default function chatRoom(props) {
                 .catch(e => console.log(e))
         }
         else{
-            // const writes = messages.map((m) => chatsRef.add(m));
-            // await Promise.all(writes);
-            // messages._id = messageIdGenerator();
-            // messages.user = { _id: myUid, name: myName };
-            // var today_date = new Date();
-            // messages.createdAt = today_date.toUTCString();
-            // const message = {...messages};
-            // const writes = message.map((m) => chatsRef.add(m));
-            // await Promise.all(writes);
-            
+            //send message structure to the database            
              await chatsRef.add(...messages)
              .catch(e=>console.log(e));
 
